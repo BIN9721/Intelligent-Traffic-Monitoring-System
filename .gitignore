@@ -1,0 +1,48 @@
+# Python
+__pycache__/
+*.py[cod]
+*.egg-info/
+.venv/
+venv/
+.env
+.env.*
+
+# Model weights (download via ultralytics or place locally)
+*.pt
+*.pth
+*.onnx
+*.engine
+
+# Training outputs
+runs/
+
+# Datasets (~78GB total — too large for GitHub)
+Datasets/
+aic21_dataset/
+cityflow_dataset/
+combined_dataset/
+vietnam_dataset/
+uadetrac_dataset/
+suspicious_val_test_labels/
+
+# Utilities / visualization (not part of completed data pipeline)
+verify_env.py
+visualize_labels.py
+visualize_night_glare.py
+visualize_preprocessing.py
+offline_augment.py
+
+# Reference materials (not part of project work)
+Paper/
+Docx_paper/
+Tai_lieu_hoan_thien.docx
+computer-vision/
+
+# Unrelated nested git repo (Cursor agent skills)
+agent-skills/
+
+# OS / editor
+.DS_Store
+*.swp
+.idea/
+.vscode/
