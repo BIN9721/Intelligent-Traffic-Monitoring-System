@@ -1,0 +1,14 @@
+# Dùng trên pod đã có sẵn torch/torchvision (RunPod PyTorch template).
+# Cài bằng: pip install --no-deps ultralytics && pip install -r requirements-cloud.txt
+matplotlib
+numpy
+nvidia-ml-py
+opencv-python
+pillow
+polars
+psutil
+pyyaml
+requests
+ultralytics-thop
+pandas
+tqdm

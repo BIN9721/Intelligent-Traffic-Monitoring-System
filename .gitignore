@@ -17,6 +17,7 @@ venv/
 runs/
 
 # Datasets (~78GB total — too large for GitHub)
+pod_bundle.tar
 Datasets/
 aic21_dataset/
 cityflow_dataset/
