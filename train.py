@@ -46,6 +46,7 @@ def parse_args():
     p.add_argument("--patience", type=int, default=20)
     p.add_argument("--name", default="yolo11x_traffic")
     p.add_argument("--resume", action="store_true")
+    p.add_argument("--noval", action="store_true", help="Bo qua validate giua cac epoch, chi validate epoch cuoi (tiet kiem thoi gian khi bi gioi han deadline)")
     return p.parse_args()
 
 
@@ -64,6 +65,7 @@ def main():
         patience=args.patience,
         name=args.name,
         resume=args.resume,
+        val=not args.noval,
         amp=True,
         cache=False,
         # Ultralytics 8.x không còn hỗ trợ fl_gamma (focal loss gamma) như YOLOv5.
@@ -72,6 +74,11 @@ def main():
         cls=2.0,
         project=str(PROJECT_ROOT / "runs" / "detect"),
     )
+
+    if args.noval:
+        # val=False bo qua validate ca luc cuoi training, nen chay rieng 1 lan
+        # tren weights cuoi cung (last.pt) de van co so lieu mAP cho luan van.
+        model.val(data=resolve_data_yaml(args.data), imgsz=args.imgsz, batch=args.batch)
 
 
 if __name__ == "__main__":
